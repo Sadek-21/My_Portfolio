@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohamed Sadek - Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    
+    <header>
+        <div class="profile">
+            <h1>Mohamed Sadek</h1>
+            <h2>Electronique & Mechanical & Robotics </h2>
+            <div class="profile-picture-container"></div>
+            <img id="profile-picture" src="Image/Profil.jpg" alt="Profile Picture" class="profile-picture">           
+            <p>Welcome to my portfolio! Whether you're a recruiter scouting for talent, a fellow engineer seeking inspiration, a friend dropping by, or even a lost stranger stumbling upon this digital space, I extend a warm greeting to you. I trust that your journey through these pages will be both enlightening and enjoyable. Let's embark on this exploration together, shall we?</p>
+        </div>
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="PDF/CVmohamed sadek.pdf" target="_blank">Resume</a></li>
+                <li><a href="PDF/" target="_blank">Deplome</a></li>
+            </ul>
+        </nav>
+        <div class="hamburger-menu" id="hamburger-menu">
+            &#9776; <!-- This is the hamburger menu icon -->
+        </div>
+        <nav class="mobile-nav" id="mobile-nav">
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#Skills">Skills</a></li>
+                <li><a href="#Projects">Projects</a></li>
+                <li><a href="PDF/CVmohamed sadek.pdf" target="_blank">Resume</a></li>
+                <li><a href="PDF/CVmohamed sadek.pdf" target="_blank">Deplome</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = document.querySelectorAll('.project');
+            const projectNumbers = document.querySelectorAll('.project-number');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            const projectsPerPage = 6;
+            let currentPage = 1;
+    
+            function showPage(page) {
+                const start = (page - 1) * projectsPerPage;
+                const end = start + projectsPerPage;
+    
+                projects.forEach((project, index) => {
+                    project.style.display = (index >= start && index < end) ? 'block' : 'none';
+                });
+    
+                projectNumbers.forEach((number, index) => {
+                    number.classList.toggle('active', index === (page - 1));
+                });
+    
+                prevButton.disabled = (page === 1);
+                nextButton.disabled = (page === Math.ceil(projects.length / projectsPerPage));
+            }
+    
+            projectNumbers.forEach((number, index) => {
+                number.addEventListener('click', () => {
+                    currentPage = index + 1;
+                    showPage(currentPage);
+                });
+            });
+    
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            });
+    
+            nextButton.addEventListener('click', () => {
+                if (currentPage < Math.ceil(projects.length / projectsPerPage)) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            });
+    
+            showPage(currentPage);
+        });
+    </script>
+    
+
+    <section id="home">
+        <div class="intro">
+            <p>I am a specialist in electromechanical systems automation, with a strong foundation in robotics and electronics. My passion lies in creating and perfecting robotic systems, continuously enhancing my technical skill set through hands-on projects and innovative problem-solving.</p>
+            <p>I am currently developing myself in robotics and working on several projects. Additionally, I am open to new work opportunities where I can apply my expertise in diagnosing and repairing complex automated systems.</p>
+            <p>With over 1 year of experience in industrial and R&D settings and creating projects, I have honed my ability to quickly identify and resolve issues in automated systems, utilizing my deep technical knowledge and practical skills.</p>
+            <p>In my free time, I enjoy reading, traveling, and engaging in various sports. I also dedicate time to helping aspiring engineers by sharing my knowledge of robotics and electronics through community workshops.</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/mohamed2sadek/"><img src="image/linkedin.png" alt="LinkedIn"></a>
+                <a href="https://www.facebook.com/profile.php?id=100012874336048"><img src="image/facebook.png" alt="Facebook"></a>
+                <a href="https://www.instagram.com/kluge_kopf/"><img src="image/instagram.png" alt="image/instagram"></a>
+                <a href="https://github.com/Sadek-21"><img src="image/github.png" alt="Github"></a>
+                <a href=""><img src="image/discorde.png" alt="Discord"></a>
+                <a href="mailto:mohsade2000@gmail.com"><img src="image/gmail.png" alt="Email"></a>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <h2>Where I've Worked</h2>
+        <div class="experience-gallery">
+            <div class="experience-item">
+                <img src="image/aptiv.png" alt="aptiv">
+                <p>Technician de Maintenance - APTIV MEKNES</p>
+            </div>
+            <div class="experience-item">
+                <img src="image/HUILERIES.jpg" alt="HUILERIES">
+                <p>Technician Electric - LES HUILERIES DE MEKNES</p>
+            </div>
+            <div class="experience-item">
+                <img src="image/SoliMar.jpg" alt="SoliMar">
+                <p>Technician - SoliMar "energie solaire"</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="academics">
+        <h2>Academics</h2>
+        <div class="academic-background">
+            <div class="academic-item">
+                <h3>Baccalauréat</h3>
+                <p>Lycée Youssef Ben Tachfine</p>
+                <p>2018-2019</p>
+            </div>
+            <div class="academic-item">
+                <h3>Diplôme de Technicien Spécialisé en Électromécanique des Systèmes Automatisés</h3>
+                <p>Institut Spécialisé de Technologie Appliquée</p>
+                <p>2019-2021</p>
+            </div>
+            <div class="academic-item">
+                <h3>Université Moulay Ismail</h3>
+                <p>Bachelor's Degree in Electromechanical Engineering</p>
+                <p>Current</p>
+            </div>
+            <div class="academic-item">
+                <h3>ALX Software Engineering Program</h3>
+                <p>Current</p>
+            </div>
+        </div>
+    </section>
+    
+
+    <section id="Projects" class="Projects-section">
+        <h2>Projects</h2>
+        <div class="skills-categories">
+        <div class="project-container">
+            <div class="project">
+                <a href="project1.html">
+                    <img src="image/battry.jpg" alt="Project 1">
+                    <p>Battry_Capacity_Meter</p>
+                </a>
+            </div>
+            <div class="project">
+                <a href="project5.html">
+                    <img src="image/Parking.jpg" alt="Project 5">
+                    <p>Project_Parking</p>
+                </a>
+            </div>
+            <div class="project-container">
+                <div class="project">
+                    <a href="project3.html">
+                        <img src="image/Truck.jpg" alt="Project 3">
+                        <p>Truck_Sand</p>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="project4.html">
+                        <img src="image/G_H_T.jpg" alt="Project 4">
+                        <p>priject_HUM_GAS_AIR</p>
+                    </a>
+                </div>
+                <div class="project">
+                    <a href="project2.html">
+                        <img src="image/ARM.jpg" alt="Project 2">
+                        <p>AREmoExo</p>
+                    </a>
+                
+                </div>
+                <div class="project">
+                    <a href="project6.html">
+                        <img src="image/simcard_code.png" alt="Project 6">
+                        <p>simcard_code</p>
+                    </a>
+                </div>
+                <div class="project-container">
+                    <div class="project">
+                        <a href="project7.html">
+                            <img src="image/Electronic_Lock.png" alt="Project 7">
+                            <p>Electronic_Lock</p>
+                        </a>
+                    </div>
+                    <div class="project">
+                        <a href="project8.html">
+                            <img src="image/GasSensor.png" alt="Project 8">
+                            <p>GasSensor</p>
+                        </a>
+                    </div>
+                    <div class="project-container">
+                        <div class="project">
+                            <a href="project7.html">
+                                <img src="image/drip_watering_system.png" alt="Project 9">
+                                <p>drip_watering_system</p>
+                            </a>
+                        </div>
+                        <div class="project">
+                            <a href="project8.html">
+                                <img src="image/ROBOT CAR.png" alt="Project 10">
+                                <p>ROBOT CAR</p>
+                            </a>
+                        </div>
+                    </div>
+                        
+                    
+        </div>
+        <div class="navigation">
+            <button class="prev">Prev</button>
+            <div class="project-numbers">
+                <span class="project-number active">1</span>
+                <span class="project-number">2</span>
+                <span class="project-number">3</span>
+                <!-- Add more project numbers as needed -->
+            </div>
+            <button class="next">Next</button>
+        </div>
+    </section>
+
+
+    <section id="Skills" class="skills-section">
+        <h2>Skills</h2>
+        <div class="skills-categories">
+            <div class="skills-category">
+                <h3>Programming</h3>
+                <ul>
+                    <li>Python</li>
+                    <li>C</li>
+                    <li>C++</li>
+                    <li>JAVA</li>
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>C++ (Arduino)</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Software</h3>
+                <ul>
+                    <li>CAD (SolidWorks)</li>
+                    <li>3D Printing</li>
+                    <li>PLM</li>
+                    <li>unity Pro XL</li>
+                    <li>Proteus </li>
+                    <li>Git</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Hands-On</h3>
+                <ul>
+                    <li>CNC Machines</li>
+                    <li>Soldering & Circuits</li>
+                    <li>Power & Hand Tools</li>
+                    <li>Lathe & Milling </li>
+                    <li>Additive Manufacturing</li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Others</h3>
+                <ul>
+                    <li>Product Design</li>
+                    <li>Sensors & Actuators</li>
+                    <li>Modelling & Simulation</li>
+                    <li>Troubleshooting</li>
+                    <li>Robot Modeling </li>
+                </ul>
+            </div>
+            <div class="skills-category">
+                <h3>Languages</h3>
+                <ul>
+                    <li>Arabic</li>
+                    <li>English </li>
+                    <li>Allmend(Zertifikat_B2)</li>
+                    <li>French</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+
+
+    <div class="feedback-section">
+        <p>If you like this content, drop me a message here. I'm always happy to hear your feedback!</p>
+        <form id="feedback-form">
+            <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+            <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+            </div>
+            <button type="submit">Send</button>
+        </form>
+    </div>
+
+
+    <footer>
+        <p>&copy; 2024 Mohamed Sadek. All rights reserved.</p>
+        <div class="footer-buttons">
+            <a href="mailto:mohsade2000@gmail.com" class="email-btn">Email</a>
+            <a href="PDF/CVmohamed sadek.pdf" target="_blank" class="resume-btn">Download Resume</a>
+        </div>
+        <p>Thank you for being here.</p>
+        <p>Feel free to connect with me via email for any opportunities that may arise or simply to exchange greetings. Should you wish to advocate for the value I can bring to your organization, you're welcome to download my resume and share it with relevant contacts. I'm eager to explore potential collaborations and look forward to hearing from you soon.</p>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+
+</html>
