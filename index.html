@@ -302,7 +302,7 @@
 
     <div class="feedback-section">
         <p>If you like this content, drop me a message here. I'm always happy to hear your feedback!</p>
-        <form id="feedback-form">
+        <form id="feedback-form" action="http://localhost:3000/send-feedback" method="POST">
             <div class="form-group">
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -318,6 +318,7 @@
             <button type="submit">Send</button>
         </form>
     </div>
+    
 
 
     <footer>
