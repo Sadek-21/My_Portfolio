@@ -1,43 +1,41 @@
-require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
+// Get the project container and the navigation div
+const projectContainer = document.querySelector('.project-container');
+const navigation = document.querySelector('.navigation');
 
-const app = express();
-const port = process.env.PORT || 3000;
+// Calculate the total number of projects
+const totalProjects = projectContainer.querySelectorAll('.project').length;
 
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+// Calculate the total number of pages (assuming 10 projects per page)
+const totalPages = Math.ceil(totalProjects / 10);
 
-app.post('/send-feedback', (req, res) => {
-    const { name, email, message } = req.body;
-    console.log('Received feedback:', { name, email, message });
+// Generate and add project numbers to the project numbers div
+const projectNumbersDiv = navigation.querySelector('.project-numbers');
+for (let i = 1; i <= totalPages; i++) {
+    const projectNumber = document.createElement('button');
+    projectNumber.textContent = i;
+    projectNumbersDiv.appendChild(projectNumber);
+}
 
-    const transporter = nodemailer.createTransport({
-        service: 'gmail',
-        auth: {
-            user: process.env.EMAIL_USER,
-            pass: process.env.EMAIL_PASS
+// Add event listeners to the project numbers buttons
+const projectNumbers = projectNumbersDiv.querySelectorAll('button');
+projectNumbers.forEach((button, index) => {
+    button.addEventListener('click', () => {
+        // Calculate the index of the first project to display on the page
+        const startIndex = index * 10;
+
+        // Hide all projects
+        projectContainer.querySelectorAll('.project').forEach(project => {
+            project.style.display = 'none';
+        });
+
+        // Show the projects for the current page
+        for (let i = startIndex; i < startIndex + 10 && i < totalProjects; i++) {
+            projectContainer.querySelectorAll('.project')[i].style.display = 'block';
         }
-    });
-
-    const mailOptions = {
-        from: email,
-        to: process.env.EMAIL_USER,
-        subject: 'New Feedback from Portfolio',
-        text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`
-    };
-
-    transporter.sendMail(mailOptions, (error, info) => {
-        if (error) {
-            console.error('Error sending email:', error);
-            return res.status(500).send(error.toString());
-        }
-        console.log('Email sent:', info.response);
-        res.status(200).send('Feedback sent successfully!');
     });
 });
 
-app.listen(port, () => {
-    console.log(`Server is running on port ${port}`);
-});
+
+
+
+
