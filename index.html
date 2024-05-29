@@ -318,7 +318,7 @@
 
     <div class="feedback-section">
         <p>If you like this content, drop me a message here. I'm always happy to hear your feedback!</p>
-        <form id="feedback-form" action="http://localhost:3000/send-feedback" method="POST">
+        <form id="feedback-form" action="/send-feedback" method="POST">
             <div class="form-group">
                 <label for="name"></label>
                 <input type="text" id="name" name="name" required placeholder="Name">
@@ -335,32 +335,9 @@
         </form>
     </div>
 
-    <footer>
-        <p>&copy; 2023 Mohamed Sadek. All Rights Reserved.</p>
-    </footer>
 
-    <script>
-        document.getElementById('feedback-form').addEventListener('submit', function (event) {
-            event.preventDefault();
 
-            const formData = new FormData(this);
-            const responseMessage = document.getElementById('response-message');
 
-            fetch(this.action, {
-                method: 'POST',
-                body: formData
-            })
-            .then(response => response.json())
-            .then(data => {
-                responseMessage.textContent = data.message;
-                responseMessage.style.color = 'green';
-            })
-            .catch(error => {
-                responseMessage.textContent = 'An error occurred. Please try again later.';
-                responseMessage.style.color = 'red';
-            });
-        });
-    </script>
     
 
 
