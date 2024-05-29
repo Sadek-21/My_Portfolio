@@ -392,7 +392,7 @@ footer {
 .feedback-section input[type="text"],
 .feedback-section input[type="email"],
 .feedback-section textarea {
-    width: 100%;
+    width: 50%;
     padding: 10px;
     margin-top: 5px;
     margin-bottom: 15px;
