@@ -12,6 +12,19 @@ header {
     padding: 20px 0;
     text-align: center;
 }
+/* to make the navigation bar above and fix it */
+.desktop-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #0a1a2a;
+    z-index: 1000;
+    padding: 10px 0; /* Adjust padding as needed */
+}
+body {
+    padding-top: 60px; /* Adjust this to match the height of your fixed nav bar */
+}
+/*-----------------------------------------*/
 
 .profile img {
     width: 150px;
@@ -347,34 +360,31 @@ footer {
 
 /* Hide the mobile navigation menu by default */
 .mobile-nav {
-    display: none;
+    display: none; /* Hide the mobile nav by default */
     position: fixed;
-    right: 0;
     top: 0;
-    width: 200px;
-    height: 100%;
-    background-color: #0b3665;
-    padding-top: 60px; /* Adjust based on header height */
-    z-index: 1;
+    width: 100%;
+    background-color: #0a1a2a;
+    z-index: 1000;
+    padding: 10px 0;
 }
 
-/* Style for the hamburger menu icon */
-.hamburger-menu {
-    display: none;
-    font-size: 30px;
+#hamburger-menu {
+    display: block; /* Show the hamburger menu icon */
     cursor: pointer;
-    position: absolute;
-    right: 20px;
-    top: 20px;
 }
 
-/* Display the hamburger menu on smaller screens */
-@media screen and (max-width: 768px) {
-    .desktop-nav {
-        display: none;
+#hamburger-menu.open + .mobile-nav {
+    display: block; /* Show mobile nav when hamburger menu is open */
+}
+
+@media (min-width: 768px) {
+    #hamburger-menu {
+        display: none; /* Hide hamburger menu on larger screens */
     }
-    .hamburger-menu {
-        display: block;
+
+    .mobile-nav {
+        display: none; /* Ensure mobile nav is hidden on larger screens */
     }
 }
 
