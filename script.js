@@ -36,33 +36,7 @@ projectNumbers.forEach((button, index) => {
 });
 
 
-const express = require('express');
-const bodyParser = require('body-parser');
-const cors = require('cors');
-const app = express();
-const port = 3000;
 
-app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
-
-app.post('/send-feedback', (req, res) => {
-    const { name, email, message } = req.body;
-    console.log(`Feedback received: Name: ${name}, Email: ${email}, Message: ${message}`);
-    res.status(200).send('Feedback received');
-});
-
-app.listen(port, () => {
-    console.log(`Server running on http://localhost:${port}`);
-});
-
-fetch('https://www.sadek-21.com/send-feedback', {
-    method: 'POST',
-    body: JSON.stringify(Object.fromEntries(formData)),
-    headers: {
-        'Content-Type': 'application/json'
-    }
-})
 
 
 
