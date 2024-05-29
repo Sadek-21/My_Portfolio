@@ -158,7 +158,42 @@ footer {
 }
 
 
+/*resume in navigation bar*/
 
+.resume-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #0a1a2a;
+    min-width: 70px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 2px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.resume-dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.resume-dropdown:hover .dropdown-content a:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+/*----------------------------------------*/
 .footer-buttons {
     margin-top: 20px;
     display: flex;
