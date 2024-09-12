@@ -468,6 +468,21 @@ function setRussianContent(element) {
     }
     // Add more elements and content as needed
 }
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    
+    if(name && email && message) {
+        alert("Message sent!");
+        // Optionally send data via AJAX here
+        // Use fetch() or XMLHttpRequest to send form data
+    } else {
+        alert("Please fill out all fields.");
+    }
+});
+
 
 
 

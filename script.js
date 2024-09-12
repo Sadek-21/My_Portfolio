@@ -37,10 +37,3 @@ projectNumbers.forEach((button, index) => {
 
 
 
-
-
-
-
-
-
-

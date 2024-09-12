@@ -266,6 +266,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding-bottom: 20px; /* Add some padding at the bottom */
 }
 
 .project-container {
@@ -306,6 +307,7 @@ footer {
     gap: 10px;
 }
 
+
 .navigation button {
     padding: 10px 20px;
     margin: 0 5px;
@@ -315,8 +317,8 @@ footer {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    
 }
-
 
 .project:hover {
     transform: translateY(-10px);
