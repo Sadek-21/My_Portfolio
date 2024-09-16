@@ -331,11 +331,12 @@
 
     <div class="feedback-section">
         <p>If you like this content, drop me a message here. I'm always happy to hear your feedback!</p>
-        <form id="feedback-form" action="send_feedback.php" method="POST">
+        <form id="feedback-form" action="https://api.web3forms.com/submit" method="POST">
             <div class="form-group">
                 <label for="name"></label>
                 <input type="text" id="name" name="name" required placeholder="Name">
             </div>
+            <input type="hidden" name="access_key" value="326e35dc-9a2b-4b38-8e8d-dea27fff1789">
             <div class="form-group">
                 <label for="email"></label>
                 <input type="email" id="email" name="email" required placeholder="E-mail">
