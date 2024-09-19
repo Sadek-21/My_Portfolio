@@ -71,55 +71,7 @@
     </header>
 
     
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const projects = document.querySelectorAll('.project');
-            const projectNumbers = document.querySelectorAll('.project-number');
-            const prevButton = document.querySelector('.prev');
-            const nextButton = document.querySelector('.next');
-            const projectsPerPage = 6;
-            let currentPage = 1;
-    
-            function showPage(page) {
-                const start = (page - 1) * projectsPerPage;
-                const end = start + projectsPerPage;
-    
-                projects.forEach((project, index) => {
-                    project.style.display = (index >= start && index < end) ? 'block' : 'none';
-                });
-    
-                projectNumbers.forEach((number, index) => {
-                    number.classList.toggle('active', index === (page - 1));
-                });
-    
-                prevButton.disabled = (page === 1);
-                nextButton.disabled = (page === Math.ceil(projects.length / projectsPerPage));
-            }
-    
-            projectNumbers.forEach((number, index) => {
-                number.addEventListener('click', () => {
-                    currentPage = index + 1;
-                    showPage(currentPage);
-                });
-            });
-    
-            prevButton.addEventListener('click', () => {
-                if (currentPage > 1) {
-                    currentPage--;
-                    showPage(currentPage);
-                }
-            });
-    
-            nextButton.addEventListener('click', () => {
-                if (currentPage < Math.ceil(projects.length / projectsPerPage)) {
-                    currentPage++;
-                    showPage(currentPage);
-                }
-            });
-    
-            showPage(currentPage);
-        });
-    </script>
+
     
 
     <section id="home">
@@ -266,6 +218,56 @@
             <button class="next">Next</button>
         </div>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const projects = document.querySelectorAll('.project');
+            const projectNumbers = document.querySelectorAll('.project-number');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            const projectsPerPage = 6;
+            let currentPage = 1;
+    
+            function showPage(page) {
+                const start = (page - 1) * projectsPerPage;
+                const end = start + projectsPerPage;
+    
+                projects.forEach((project, index) => {
+                    project.style.display = (index >= start && index < end) ? 'block' : 'none';
+                });
+    
+                projectNumbers.forEach((number, index) => {
+                    number.classList.toggle('active', index === (page - 1));
+                });
+    
+                prevButton.disabled = (page === 1);
+                nextButton.disabled = (page === Math.ceil(projects.length / projectsPerPage));
+            }
+    
+            projectNumbers.forEach((number, index) => {
+                number.addEventListener('click', () => {
+                    currentPage = index + 1;
+                    showPage(currentPage);
+                });
+            });
+    
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    showPage(currentPage);
+                }
+            });
+    
+            nextButton.addEventListener('click', () => {
+                if (currentPage < Math.ceil(projects.length / projectsPerPage)) {
+                    currentPage++;
+                    showPage(currentPage);
+                }
+            });
+    
+            showPage(currentPage);
+        });
+    </script>
 
 
     <section id="Skills" class="skills-section">
