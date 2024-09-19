@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Showcase</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .projects-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            flex: 1;
+            margin: 0 10px;
+            max-width: 30%;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .project-card img {
+            max-width: 100%;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 20px;
+        }
+
+        .project-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #4a4a4a;
+        }
+
+        .project-card p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            color: #666;
+        }
+
+        .project-card .built-with {
+            margin-bottom: 20px;
+        }
+
+        .project-card .built-with span {
+            background-color: #f0f0f5;
+            border-radius: 5px;
+            padding: 5px 10px;
+            margin: 5px;
+            display: inline-block;
+            font-size: 0.9rem;
+        }
+
+        .project-card a {
+            text-decoration: none;
+            color: #007BFF;
+            font-weight: bold;
+            margin: 0 10px;
+        }
+
+        .project-card a:hover {
+            text-decoration: underline;
+        }
+
+    </style>
+</head>
+<body>
+
+    <section class="projects">
+        <h1 style="text-align: center;">Projects</h1>
+        <p style="text-align: center;">Things I've built so far (featured)</p>
+        <div class="projects-container">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150" alt="Pomodoro Web App">
+                <h3>Pomodoro Web App</h3>
+                <p>A web app that implements the Pomodoro technique with customizable timers.</p>
+                <div class="built-with">
+                    <span>VueJS</span>
+                    <span>Pinia</span>
+                    <span>NodeJS</span>
+                    <span>MongoDB</span>
+                </div>
+                <a href="#" target="_blank">Live Preview</a>
+                <a href="#" target="_blank">View Code</a>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150" alt="Restaurant Web App">
+                <h3>Restaurant Web App</h3>
+                <p>A restaurant web application for handling orders internally and externally.</p>
+                <div class="built-with">
+                    <span>React</span>
+                    <span>Redux</span>
+                    <span>Material UI</span>
+                </div>
+                <a href="#" target="_blank">Live Preview</a>
+                <a href="#" target="_blank">View Code</a>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card">
+                <img src="https://via.placeholder.com/300x150" alt="Management System">
+                <h3>Management System</h3>
+                <p>Developed a role-based management system for a non-profit organization.</p>
+                <div class="built-with">
+                    <span>VueJS</span>
+                    <span>Vuetify</span>
+                    <span>TypeScript</span>
+                    <span>Laravel</span>
+                </div>
+                <a href="#" target="_blank">Live Preview</a>
+                <a href="#" target="_blank">View Code</a>
+            </div>
+        </div>
+    </section>
+
+</body>
+</html>

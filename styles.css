@@ -266,7 +266,7 @@ footer {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding-bottom: 20px; /* Add some padding at the bottom */
+    padding-bottom: 20px;
 }
 
 .project-container {
@@ -279,13 +279,14 @@ footer {
 
 .project {
     width: 200px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project img {
     width: 100%;
-    height: auto;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    height: 150px;
+    object-fit: cover; /* Ensure all images have the same size and aspect ratio */
+    border-radius: 10px;
 }
 
 .project p {
@@ -294,9 +295,9 @@ footer {
     text-align: center;
 }
 
-.project img:hover {
-    filter: brightness(80%);
-    cursor: pointer;
+.project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .navigation {
@@ -325,9 +326,6 @@ footer {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-.navigation button:hover {
-    background-color: #0056b3;
-}
 .project-numbers {
     display: flex;
     gap: 5px;
@@ -341,8 +339,12 @@ footer {
     transition: background-color 0.3s ease;
 }
 
-.project-number:hover,
 .project-number.active {
+    background-color: #0b3665;
+    color: #fff;
+}
+
+.project-number:hover {
     background-color: #0b3665;
     color: #fff;
 }
